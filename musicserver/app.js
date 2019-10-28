@@ -3,6 +3,7 @@ const express= require("express");
 const bodyParser=require('body-parser');
 const userRouter=require('./routes/user.js');
 const indexRouter=require('./routes/index.js');
+const commontRouter=require('./routes/commont.js');
 const session = require("express-session");
 const cors = require("cors");
 // const mysql = require("mysql");
@@ -35,6 +36,7 @@ server.use(bodyParser.urlencoded({
 //使用路由器，挂载到/user下
 server.use('/user',userRouter);
 server.use('/index',indexRouter);
+server.use('/commont',commontRouter);
 
 
 
@@ -204,4 +206,6 @@ server.use('/index',indexRouter);
 //    data:result});
 //  });
 // })
+
+
 
